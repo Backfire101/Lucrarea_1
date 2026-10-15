@@ -18,7 +18,7 @@ divizibil cu 100, sau este divizibil cu 400.
 #include <stdio.h>
 #include <math.h>
 
-void problema_1()
+void problema_01()
 {
 	double numar;
 
@@ -32,7 +32,7 @@ void problema_1()
 	return;
 }
 
-void problema_2()
+void problema_02()
 {
 	double numar;
 
@@ -46,7 +46,7 @@ void problema_2()
 	return;
 }
 
-void problema_3()
+void problema_03()
 {
 	double numar;
 	double curs = 4.754;
@@ -61,7 +61,7 @@ void problema_3()
 	return;
 }
 
-void problema_4()
+void problema_04()
 {
 	int numar1, numar2, numar3, suma, diferenta;
 
@@ -79,7 +79,7 @@ void problema_4()
 	return;
 }
 
-void problema_5()
+void problema_05()
 {
 	double n1, n2, n3;
 
@@ -108,7 +108,36 @@ void problema_5()
 	return;
 }
 
-void problema_8()
+void problema_06()
+{
+	int numar;
+
+	printf("Dati un numar:", &numar);
+	scanf("%d", &numar);
+
+	printf("Grupurile de numere sunt:");
+	for (int i = 2; i <= numar - 2; i++)
+		for (int j = i + 1; j <= numar - 1; j++)
+			for (int k = j + 1; k <= numar; k++)
+				if ((i*i == j * j + k * k) || (j*j == i * i + k * k) || (k*k == i * i + j * j))
+					printf("\n%d, %d, %d;", i, j, k);
+
+}
+
+void problema_07()
+{
+	int numar;
+
+	printf("Dati un numar:", &numar);
+	scanf("%d", &numar);
+
+	printf("Numerele sunt:");
+	
+	for (int i = 0; i < numar; i++)
+		printf("%d, ", i);
+}
+
+void problema_08()
 {
 	int an;
 
@@ -118,7 +147,7 @@ void problema_8()
 	printf((an % 4) ? "Nu este an bisect" : ((an % 100) ? "Este an bisect" : ((an % 400) ? "Nu este an bisect." : "Este an bisect.")));
 }
 
-void problema_9()
+void problema_09()
 {
 	int an1, an2, dif_ani, dif_luni = 12, dif_zile = 365;
 
@@ -153,13 +182,15 @@ int main()
 	do {
 		switch (problema)
 		{
-		case 1: problema_1(); break;
-		case 2: problema_2(); break;
-		case 3: problema_3(); break;
-		case 4: problema_4(); break;
-		case 5: problema_5(); break;
-		case 8: problema_8(); break;
-		case 9: problema_9(); break;
+		case  1: problema_01(); break;
+		case  2: problema_02(); break;
+		case  3: problema_03(); break;
+		case  4: problema_04(); break;
+		case  5: problema_05(); break;
+		case  6: problema_06(); break;
+		case  7: problema_07(); break;
+		case  8: problema_08(); break;
+		case  9: problema_09(); break;
 		case 10: problema_10(); break;
 		default: printf("Nu exista problema numarul:%d", problema); break;
 		}
